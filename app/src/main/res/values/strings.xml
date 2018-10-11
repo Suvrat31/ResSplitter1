@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ResSplitter</string>
+    <string name="heading_name">Restaurant Name</string>
+
+
+
 </resources>

@@ -66,6 +66,7 @@ public class CustomAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.lv_item, null, true);
 
             holder.tvname = (TextView) convertView.findViewById(R.id.name);
+            holder.tvAddname = (TextView) convertView.findViewById(R.id.address);
             holder.iv = (ImageView) convertView.findViewById(R.id.imgView);
 
             convertView.setTag(holder);
@@ -75,6 +76,7 @@ public class CustomAdapter extends BaseAdapter {
         }
 
         holder.tvname.setText(imageModelArrayList.get(position).getName());
+        holder.tvAddname.setText(imageModelArrayList.get(position).getName());
         holder.iv.setImageResource(imageModelArrayList.get(position).getImage_drawable());
 
         return convertView;
@@ -82,7 +84,7 @@ public class CustomAdapter extends BaseAdapter {
 
     private class ViewHolder {
 
-        protected TextView tvname;
+        protected TextView tvname,tvAddname;
         private ImageView iv;
 
     }

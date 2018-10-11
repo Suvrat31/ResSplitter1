@@ -13,20 +13,18 @@ public class MainActivity extends AppCompatActivity {
     private CustomAdapter customAdapter;
     private ArrayList<ImageModel> imageModelArrayList;
     private int[] myImageList = new int[]
-            {
-                    R.drawable.a, R.drawable.b,
-            R.drawable.c
-    };
+            {R.drawable.a, R.drawable.b,
+            R.drawable.c};
     private String[] myImageNameList = new String[]{"Res 1", "Res 2",
             "Res 3", };
+    private String[] myImageAddressList = new String[]{"UPES,Bidholi", "UPES, Kandoli",
+            "Rajpur Road", };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         lv = (ListView) findViewById(R.id.listView);
-
         imageModelArrayList = populateList();
         Log.d("hjhjh",imageModelArrayList.size()+"");
         customAdapter = new CustomAdapter(this,imageModelArrayList);
@@ -41,12 +39,10 @@ public class MainActivity extends AppCompatActivity {
         for(int i = 0; i < 3; i++){
             ImageModel imageModel = new ImageModel();
             imageModel.setName(myImageNameList[i]);
+            imageModel.setName(myImageAddressList[i]);
             imageModel.setImage_drawable(myImageList[i]);
             list.add(imageModel);
         }
-
         return list;
-
     }
-
 }
