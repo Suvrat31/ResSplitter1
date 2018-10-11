@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.c
     };
     private String[] myImageNameList = new String[]{"Res 1", "Res 2",
-            "Res 3"};
+            "Res 3", };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
