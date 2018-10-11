@@ -1,3 +1,6 @@
+package com.example.ansh.ressplitter;
+
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,19 +9,22 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.ansh.ressplitter.ImageModel;
+import com.example.ansh.ressplitter.R;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
  * Created by Parsania Hardik on 03-Jan-17.
  */
-public class CustomeAdapter  extends BaseAdapter {
+public class CustomAdapter extends BaseAdapter {
 
     private Context context;
     private ArrayList<ImageModel> imageModelArrayList;
 
 
-    public CustomeAdapter(Context context, ArrayList<ImageModel> imageModelArrayList) {
+    public CustomAdapter(Context context, ArrayList<ImageModel> imageModelArrayList) {
 
         this.context = context;
         this.imageModelArrayList = imageModelArrayList;
