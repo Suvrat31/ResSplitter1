@@ -35,17 +35,24 @@ public class ResDetails extends AppCompatActivity {
                 // Setting Positive "Yes" Button
                 alertDialog.setPositiveButton("JOIN", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int which) {
+                        if(true) {
 
+                            Intent intent = new Intent(getApplicationContext(), Menu.class);
+                            startActivity(intent);
+                            // Write your code here to invoke YES event
+                            Toast.makeText(getApplicationContext(), "Adding you to the Table", Toast.LENGTH_SHORT).show();
+
+                        }
                         // Write your code here to invoke YES event
-                        Toast.makeText(getApplicationContext(), "You clicked on YES", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Table Joined", Toast.LENGTH_SHORT).show();
                     }
                 });
 
                 // Setting Negative "NO" Button
-                alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         // Write your code here to invoke NO event
-                        Toast.makeText(getApplicationContext(), "You clicked on NO", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Cancelled", Toast.LENGTH_SHORT).show();
                         dialog.cancel();
                     }
                 });
