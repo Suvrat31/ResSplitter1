@@ -1,8 +1,11 @@
 package com.example.ansh.ressplitter;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -31,6 +34,28 @@ public class MainActivity extends AppCompatActivity {
         customAdapter = new CustomAdapter(this,imageModelArrayList);
         lv.setAdapter(customAdapter);
 
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position){
+                    case 0: {
+                        Intent intent = new Intent(view.getContext(), ResDetails.class);
+                        startActivity(intent);
+                        break;
+                    }
+                    case 1: {
+                        Intent intent = new Intent(view.getContext(), ResDetails.class);
+                        startActivity(intent);
+                        break;
+                    }
+                    case 2: {
+                            Intent intent = new Intent(view.getContext(), ResDetails.class);
+                            startActivity(intent);
+                    break;
+                    }
+                }
+            }
+        });
 
     }
 
@@ -47,4 +72,5 @@ public class MainActivity extends AppCompatActivity {
         }
         return list;
     }
+
 }
