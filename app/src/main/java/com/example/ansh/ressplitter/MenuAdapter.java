@@ -1,4 +1,4 @@
-package com.example.ansh.ressplitter.dummy;
+package com.example.ansh.ressplitter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.ansh.ressplitter.MenuItem;
 import com.example.ansh.ressplitter.R;
 
 import java.util.ArrayList;

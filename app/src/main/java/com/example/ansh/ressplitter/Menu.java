@@ -1,11 +1,12 @@
 package com.example.ansh.ressplitter;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 
-import com.example.ansh.ressplitter.dummy.MenuAdapter;
-import com.example.ansh.ressplitter.dummy.MenuItem;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -17,6 +18,8 @@ import java.util.ArrayList;
 public class Menu extends AppCompatActivity {
 
     ListView listView;
+   public Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,9 +44,17 @@ public class Menu extends AppCompatActivity {
             }
         });
 
+        button = (button)findViewById(R.id.);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(this, Cart.class);
+                startActivity(intent);
+            }
+        });
 
 
-//        ArrayList<MenuItem> items = new ArrayList<>();
+        //        ArrayList<MenuItem> items = new ArrayList<>();
 //        MenuItem item = new MenuItem();
 //        item.setItemName("Item 1");
 //        item.setPrice(23);

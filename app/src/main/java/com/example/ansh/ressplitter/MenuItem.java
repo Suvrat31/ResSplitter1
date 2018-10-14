@@ -1,4 +1,4 @@
-package com.example.ansh.ressplitter.dummy;
+package com.example.ansh.ressplitter;
 
 public class MenuItem {
 
