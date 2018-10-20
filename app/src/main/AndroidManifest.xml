@@ -20,7 +20,7 @@
         <activity android:name=".Table_Menu" />
         <activity
             android:name=".Cart"
-            android:label="@string/title_activity_cart"
+            android:label="@string/title_activity_cart1"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
