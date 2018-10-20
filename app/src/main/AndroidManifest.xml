@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ResDetails" />
-        <activity android:name=".Menu" />
+        <activity android:name=".Table_Menu" />
         <activity
             android:name=".Cart"
             android:label="@string/title_activity_cart"

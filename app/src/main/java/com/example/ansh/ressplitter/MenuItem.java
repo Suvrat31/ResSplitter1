@@ -5,6 +5,7 @@ public class MenuItem {
     String itemName;
     int price;
     int restrId;
+    int itemId;
 
     public String getItemName() {
         return itemName;
@@ -28,5 +29,8 @@ public class MenuItem {
 
     public void setRestrId(int restrId) {
         this.restrId = restrId;
+    }
+
+    public int getItemId() { return itemId;
     }
 }

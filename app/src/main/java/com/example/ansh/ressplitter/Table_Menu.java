@@ -3,9 +3,11 @@ package com.example.ansh.ressplitter;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -15,10 +17,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class Menu extends AppCompatActivity {
+public class Table_Menu extends AppCompatActivity {
 
     ListView listView;
-   public Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,14 +45,6 @@ public class Menu extends AppCompatActivity {
             }
         });
 
-        button = (button)findViewById(R.id.);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(this, Cart.class);
-                startActivity(intent);
-            }
-        });
 
 
         //        ArrayList<MenuItem> items = new ArrayList<>();
@@ -65,4 +58,26 @@ public class Menu extends AppCompatActivity {
 //
 //        listView.setAdapter(adapter);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_buttons,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(android.view.MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.menu_button_cart:
+                startActivity(new Intent(this, Cart.class));
+           //   Toast toast=  Toast.makeText(getApplicationContext(),"fine",Toast.LENGTH_SHORT);
+            //  toast.show();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
 }

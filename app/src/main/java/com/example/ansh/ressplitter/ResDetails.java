@@ -37,7 +37,7 @@ public class ResDetails extends AppCompatActivity {
                     public void onClick(DialogInterface dialog,int which) {
                         if(true) {
 
-                            Intent intent = new Intent(getApplicationContext(), Menu.class);
+                            Intent intent = new Intent(getApplicationContext(), Table_Menu.class);
                             startActivity(intent);
                             // Write your code here to invoke YES event
                             Toast.makeText(getApplicationContext(), "Adding you to the Table", Toast.LENGTH_SHORT).show();
@@ -84,10 +84,10 @@ public class ResDetails extends AppCompatActivity {
 
                         if(true) {
 
-                            Intent intent = new Intent(getApplicationContext(), Menu.class);
+                            Intent intent = new Intent(getApplicationContext(), Table_Menu.class);
+                            Toast.makeText(getApplicationContext(), "Adding you to the Table", Toast.LENGTH_SHORT).show();
                             startActivity(intent);
                             // Write your code here to invoke YES event
-                            Toast.makeText(getApplicationContext(), "Adding you to the Table", Toast.LENGTH_SHORT).show();
 
                         }
                     }
@@ -108,7 +108,7 @@ public class ResDetails extends AppCompatActivity {
         });
     }
     public void openMenu(){
-        Intent intent = new Intent (this, Menu.class);
+        Intent intent = new Intent (this, Table_Menu.class);
     }
 
 }
