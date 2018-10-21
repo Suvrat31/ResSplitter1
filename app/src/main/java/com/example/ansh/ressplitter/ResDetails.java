@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class ResDetails extends AppCompatActivity {
 
     public Button join, create;
@@ -75,7 +77,7 @@ public class ResDetails extends AppCompatActivity {
                 alertDialog.setTitle("Your Table Code");
 
                 // Setting Dialog Message
-                alertDialog.setMessage("CODE: XYZ");
+                alertDialog.setMessage("CODE: " + generateString(6));
 
 
                 // Setting Positive "Yes" Button
@@ -88,6 +90,7 @@ public class ResDetails extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Adding you to the Table", Toast.LENGTH_SHORT).show();
                             startActivity(intent);
                             // Write your code here to invoke YES event
+
 
                         }
                     }
@@ -111,4 +114,17 @@ public class ResDetails extends AppCompatActivity {
         Intent intent = new Intent (this, Table_Menu.class);
     }
 
-}
+    public String generateString(int length){
+        char[] chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".toCharArray();
+        StringBuilder stringBuilder = new StringBuilder();
+        Random random = new Random();
+        for(int i =0;i< length;i++)
+        {
+            char c = chars[random.nextInt(chars.length)];
+            stringBuilder.append(c);
+        }
+        return stringBuilder.toString();
+    }
+    }
+
+

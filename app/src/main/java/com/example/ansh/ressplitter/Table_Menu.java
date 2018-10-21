@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,12 +18,14 @@ import java.util.ArrayList;
 public class Table_Menu extends AppCompatActivity {
 
     ListView listView;
-
+    TextView codetable;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_table_menu);
+
         listView = findViewById(R.id.list_view_menu);
+        codetable= findViewById(R.id.tablecode);
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("restaurant");
         reference.addValueEventListener(new ValueEventListener() {
@@ -41,7 +44,6 @@ public class Table_Menu extends AppCompatActivity {
 
             }
         });
-
 
 
         //        ArrayList<MenuItem> items = new ArrayList<>();
