@@ -32,7 +32,6 @@ public class ResDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_res_details);
         final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("TableCode");
-
 //JOIN
         join = findViewById(R.id.join);
         join.setOnClickListener(new View.OnClickListener() {
@@ -64,12 +63,15 @@ public class ResDetails extends AppCompatActivity {
                         reference.addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
-                                if(dataSnapshot.hasChild(userInput.getText().toString()) && !exist) {
+                                if(dataSnapshot.hasChild(userInput.getText().toString()) && !exist && !userInput.getText().toString().isEmpty()) {
 
                                     User user = new User();
                                     user.setName("Ansh123211");
 
-                                    reference.child(userInput.getText().toString()).push().setValue(user);
+                                    reference.child(userInput.getText().toString()).child("User2").child("Orders").child("Default").setValue("default") ;
+                                    reference.child(userInput.getText().toString()).child("User2").child("Amount").child("Default").setValue("default") ;
+
+                                  //  reference.child(userInput.getText().toString()).child(user.getName()).setValue("Def");
                                     Intent intent = new Intent(getApplicationContext(), Table_Menu.class);
                                     startActivity(intent);
 
@@ -116,12 +118,12 @@ public class ResDetails extends AppCompatActivity {
             public void onClick(View v) {
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(ResDetails.this);
 
+               final String code = generateString(6);
                 // Setting Dialog Title
                 alertDialog.setTitle("Your Table Code");
 
                 // Setting Dialog Message
-                alertDialog.setMessage("CODE: " + generateString(6));
-
+                alertDialog.setMessage("CODE: " + code );
 
                 // Setting Positive "Yes" Button
                 alertDialog.setPositiveButton("Join Table", new DialogInterface.OnClickListener() {
@@ -129,6 +131,9 @@ public class ResDetails extends AppCompatActivity {
 
                         if(true) {
 
+
+                            reference.child(code).child("User1").child("Orders").child("Default").setValue("default") ;
+                            reference.child(code).child("User1").child("Amount").child("Default").setValue("default") ;
                             Intent intent = new Intent(getApplicationContext(), Table_Menu.class);
                             Toast.makeText(getApplicationContext(), "Adding you to the Table", Toast.LENGTH_SHORT).show();
                             startActivity(intent);
